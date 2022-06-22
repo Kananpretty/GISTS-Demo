@@ -1,4 +1,4 @@
-import { Alert, AlertTitle, Container } from "@mui/material";
+import { Alert, AlertTitle, Container, List, ListItem, Paper } from "@mui/material";
 import React from "react";
 import GistDetailCard from "./GistDetailCard";
 
@@ -9,23 +9,23 @@ const SearchResults = (data) => {
 
 
     return (
-        <Container>
+        <Paper >
             {userName !== null && userName !== undefined && userdata.length !== 0 ? (
                 <>
                     <Alert severity="success"
-                        style={{ marginTop: 10, marginBottom: 10 }}>
+                        sx={{ my: 2 }}>
                         <AlertTitle>{`${userName}'s Gists`}</AlertTitle>
                         {`${userdata.length} Gists found`}
                     </Alert>
 
-                    <ul>
+                    <Container>
                         {userdata.map((gist, index) => {
-                            return <GistDetailCard id={index} gistData={gist}></GistDetailCard>;
+                            return <GistDetailCard key={index} gistData={gist}></GistDetailCard>;
                         })}
-                    </ul>
+                    </Container>
                 </>
             ) : null}
-        </Container>
+        </Paper>
     )
 }
 

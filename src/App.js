@@ -1,17 +1,16 @@
-import { AppBar, Container, Divider, Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import './App.css';
 import SearchBar from './components/SearchBar';
 
 function App() {
   return (
     <>
-      <Container >
-        <Typography variant='h3' align='center'>
-          GISTS Viewer
+      <Container>
+        <Typography variant='h3' align='center' color='#1f56b5' gutterBottom='true'>
+          GISTS Search
         </Typography>
       </Container>
-      <Divider></Divider>
-      <Container>
+      <Container maxWidth="lg">
         <SearchBar></SearchBar>
       </Container>
     </>
